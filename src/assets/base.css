@@ -91,6 +91,11 @@ body {
   cursor: pointer;
 }
 
+.nav-title{
+  font-size: 2.5vw;
+  font-weight: 1000;
+}
+
 .grid-container{
   display: flex;
   justify-content: center;
@@ -150,4 +155,25 @@ body {
 
 .input-button:hover{
   background-color: var(--color-raised);
+}
+
+@media screen and (max-width: 760px) {
+  .grid{
+    grid-template: auto / auto auto;
+    gap: 5%;
+  }
+
+  .nav-title{
+    font-size: 2vw;
+  }
+
+  .nav-item{
+    font-size: 1.8vw;
+  }
+}
+
+@media screen and (min-width: 1480px) {
+  .nav-title{
+    font-size: 38px;
+  }
 }
