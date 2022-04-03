@@ -4,7 +4,7 @@
   const state = reactive({
     status: '',
     data: {},
-    postData: {}
+    postData: ''
   })
 
   const input = reactive({
@@ -65,11 +65,9 @@
 </script>
 
 <template>
-  <!--This iframe stops the form redirect-->
-  <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
-
   <div class = "data-container">
     <div class="data-display">
+      <button v-on:click=fetchData()>Refresh</button>
       <p>Soil Moisture: {{parseFloat(state.data.soilMoisture*100).toFixed(2)}}%</p>
       <p>Is empty: {{ state.data.isEmpty}}</p>
       <p>Light Level: {{parseFloat(state.data.lightLevel*100).toFixed(2)}}%</p>
@@ -79,6 +77,9 @@
       <p>Pump Interval: {{state.data.pumpInterval}} seconds</p>
       <p>Mode: {{state.data.mode}}</p>
     </div>
+    
+    <!--This iframe stops the form redirect-->
+    <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
 
     <form action='/' class="input-container" @submit=postData() target="dummyframe">
       <div class="input-item-container">
