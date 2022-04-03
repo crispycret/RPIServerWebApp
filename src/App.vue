@@ -39,6 +39,8 @@
       .then((response) => { return response.json(); })
       .then((json)=>{
         state.postData = json
+        //then refresh data
+        fetchData()
       })
       .catch((error) => console.log("Error", error));
   }
@@ -130,7 +132,7 @@
       </div>
       <div class="grid-item">
         <div class="grid-item-title">Refresh Data</div>
-        <input type="submit" class="input-button" v-on:click=fetchData()>
+        <input type="submit" class="input-button" v-on:click=fetchData() value="Refresh">
       </div>
     </div>
   </div>
