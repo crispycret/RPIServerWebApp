@@ -4,7 +4,8 @@
   const state = reactive({
     status: '',
     data: {},
-    postData: ''
+    postData: '',
+    modeSetting: ''
   })
 
   const input = reactive({
@@ -39,6 +40,8 @@
       .then((response) => { return response.json(); })
       .then((json)=>{
         state.postData = json
+        //then refresh data
+        fetchData()
       })
       .catch((error) => console.log("Error", error));
   }
@@ -59,6 +62,13 @@
       setErrorResponse()
     } else {
       state.data = response.data
+      if(state.data.mode == '1'){
+        state.modeSetting = '- (AUTO)'
+      } else if (state.data.mode == '2'){
+        state.modeSetting = '- (TIMER)'
+      } else{
+        state.modeSetting = '- (OFF)'
+      }
       console.log(state.data)
     }
   }
@@ -104,7 +114,7 @@
       </div>
       <div class="grid-item">
         <div class="grid-item-title">Mode</div>
-        <div class="grid-item-data">{{state.data.mode}}</div>
+        <div class="grid-item-data">{{state.data.mode}} {{state.modeSetting}}</div>
       </div>
       <div></div>
       <div class="grid-item">
@@ -130,7 +140,7 @@
       </div>
       <div class="grid-item">
         <div class="grid-item-title">Refresh Data</div>
-        <input type="submit" class="input-button" v-on:click=fetchData()>
+        <input type="submit" class="input-button" v-on:click=fetchData() value="Refresh">
       </div>
     </div>
   </div>
