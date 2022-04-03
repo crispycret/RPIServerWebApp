@@ -65,32 +65,36 @@
 </script>
 
 <template>
-  <div class = "dataContainer">
-    <p>Soil Moisture: {{parseFloat(state.data.soilMoisture*100).toFixed(2)}}%</p>
-    <p>Is empty: {{ state.data.isEmpty}}</p>
-    <p>Light Level: {{parseFloat(state.data.lightLevel*100).toFixed(2)}}%</p>
-    <p>Pump Active: {{ state.data.pumpActive }}</p>
-    <p>Temperature: {{state.data.temperature}} &#8457;</p>
-    <p>Pump Duration: {{state.data.pumpDuration}} seconds</p>
-    <p>Pump Interval: {{state.data.pumpInterval}} seconds</p>
+  <div class = "data-container">
 
-    <div id="inputContainer">
-      <div class="inputItemContainer">
-        <label for="pumpDuration">Pump Duration: </label>
+    <div class="data-display">
+      <p>Soil Moisture: {{parseFloat(state.data.soilMoisture*100).toFixed(2)}}%</p>
+      <p>Is empty: {{ state.data.isEmpty}}</p>
+      <p>Light Level: {{parseFloat(state.data.lightLevel*100).toFixed(2)}}%</p>
+      <p>Pump Active: {{ state.data.pumpActive }}</p>
+      <p>Temperature: {{state.data.temperature}} &#8457;</p>
+      <p>Pump Duration: {{state.data.pumpDuration}} seconds</p>
+      <p>Pump Interval: {{state.data.pumpInterval}} seconds</p>
+    </div>
+
+    <div id="input-container">
+      <div class="input-item-container">
+        <label>Pump Duration:</label>
         <input class="textInput" type="text" v-model="input.pumpDuration" placeholder="Duration">
       </div>
-      <div class="inputItemContainer">
-        <label for="pumpInterval">Pump Interval: </label>
+      <div class="input-item-container">
+        <label>Pump Interval:</label>
         <input class="textInput" type="text" v-model="input.pumpInterval" placeholder="Interval">
       </div>
-      <div class="inputItemContainer">
-        <label for="mode">Mode:</label>
+      <div class="input-item-container">
+        <label>Mode:</label>
         <input class="textInput" type="text" v-model="input.mode" placeholder="Mode">
       </div>
       <button v-on:click=postData()>Submit</button>
     </div>
     <div>Received Data: {{state.postData}}</div>
   </div>
+
 </template>
 
 <style>
