@@ -131,6 +131,7 @@ body {
 .grid-item-data{
   font-size: 1.2rem;
   margin: 5px 5px;
+  max-width: 300px;
 }
 
 .text-input, .input-button{
@@ -160,7 +161,8 @@ body {
 @media screen and (max-width: 760px) {
   .grid{
     grid-template: auto / auto auto;
-    gap: 5%;
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
   }
 
   .nav-title{
