@@ -109,16 +109,16 @@
       <div></div>
       <div class="grid-item">
         <form action='' class="input-container" v-on:submit.prevent="onSubmit" @submit=postData()>
-          <div class="input-item-container">
-            <label>Pump Duration:</label>
+          <div>
+            <p>Pump Duration</p>
             <input class="text-input" type="text" v-model="input.pumpDuration" placeholder="Duration" required>
           </div>
-          <div class="input-item-container">
-            <label>Pump Interval:</label>
+          <div>
+            <p>Pump Interval</p>
             <input class="text-input" type="text" v-model="input.pumpInterval" placeholder="Interval" required>
           </div>
-          <div class="input-item-container">
-            <label>Mode:</label>
+          <div>
+            <p>RPI Mode</p>
             <input class="text-input" type="text" v-model="input.mode" placeholder="Mode" required>
           </div>
           <input type="submit" class="input-button">
@@ -127,6 +127,10 @@
       <div class="grid-item">
         <div class="grid-item-title">Received Data</div>
         <div class="grid-item-data">{{state.postData}}</div>
+      </div>
+      <div class="grid-item">
+        <div class="grid-item-title">Refresh Data</div>
+        <input type="submit" class="input-button" v-on:click=fetchData()>
       </div>
     </div>
   </div>
