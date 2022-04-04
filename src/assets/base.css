@@ -107,7 +107,7 @@ body {
   width: 90%;
   height: 90vh;
   display: grid;
-  grid-template: 100px 100px 100px 300px / auto auto auto;
+  grid-template: auto / auto auto auto;
   gap: 5%;
 }
 
@@ -156,6 +156,10 @@ body {
 
 .input-button:hover{
   background-color: var(--color-raised);
+}
+
+.grid-line-chart{
+  max-width: 400px;
 }
 
 @media screen and (max-width: 760px) {

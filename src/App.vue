@@ -1,11 +1,11 @@
 <script setup>
   import { ref, reactive } from "vue";
-
+  import BarChart from './assets/components/BarChart.vue'
   const state = reactive({
     status: '',
     data: {},
     postData: '',
-    modeSetting: ''
+    modeSetting: '',
   })
 
   const input = reactive({
@@ -74,6 +74,13 @@
   }
 </script>
 
+<script>
+  export default {
+    name: 'App',
+    components: { BarChart }
+  }
+</script>
+
 <template>
   <div class="navbar">
     <h1 class="nav-title">PlantWaterer</h1>
@@ -82,8 +89,13 @@
     <div class="nav-item">Option 3</div>
     <div class="nav-item">Option 4</div>
   </div>
+
   <div class="grid-container">
     <div class="grid">
+      <div class="grid-item">
+        <div class="grid-item-title">Chart</div>
+        <BarChart />
+      </div>
       <div class="grid-item">
         <div class="grid-item-title">Soil Moisture</div>
         <div class="grid-item-data">{{parseFloat(state.data.soilMoisture*100).toFixed(2)}}%</div>
@@ -116,7 +128,6 @@
         <div class="grid-item-title">Mode</div>
         <div class="grid-item-data">{{state.data.mode}} {{state.modeSetting}}</div>
       </div>
-      <div></div>
       <div class="grid-item">
         <form action='' class="input-container" v-on:submit.prevent="onSubmit" @submit=postData()>
           <div>

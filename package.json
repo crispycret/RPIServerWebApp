@@ -7,11 +7,17 @@
     "preview": "vite preview --port 5050"
   },
   "dependencies": {
+    "chart.js": "^3.7.1",
     "url": "^0.11.0",
-    "vue": "^3.2.31"
+    "vue": "^3.2.31",
+    "vue-chartjs": "^4.0.4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.2.2",
     "vite": "^2.8.4"
-  }
+  },
+  "description": "This template should help get you started developing with Vue 3 in Vite.",
+  "main": "vite.config.js",
+  "author": "",
+  "license": "ISC"
 }
