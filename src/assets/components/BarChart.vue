@@ -57,20 +57,33 @@ export default {
         labels: [ 'January', 'February', 'March' ],
         datasets: [{ 
           label: "Humidity",
-          data: [.2, .3, .5],
-          backgroundColor: 'rgba(255, 99, 132, 1)'
+          data: [.3, .33, .53],
+          backgroundColor: 'rgba(255, 99, 132, 1)',
+          
         },{ 
           label: "WaterContent",
-          data: [.1, .4, .45],
+          data: [.13, .42, .45],
           backgroundColor: 'rgba(54, 162, 235, 1)'
         }]
       },
       chartOptions: {
         scales: {
           y: {
+            grace: "1%",
+            title: {
+              display: true,
+              text:'Percentage',
+              color: '#FFF'
+            },
             beginAtZero: true,
             ticks: {
-              color: '#FFF'
+              color: '#FFF',
+              min: 0,
+              max: 1,
+              stepSize: .1,
+              format: {
+                style: 'percent'
+              }
             },
             grid: {
               color: 'rgba(255,255,255,.2)'
@@ -91,11 +104,9 @@ export default {
             labels: {
               color: '#FFF'
             }
-          },
-          labels: {
-            fontColor: ['rgba(255, 255, 255, 1)']
           }
-        }
+        },
+        responsive: true
       }
     }
   }

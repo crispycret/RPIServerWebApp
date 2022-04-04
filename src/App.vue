@@ -93,8 +93,8 @@
   <div class="grid-container">
     <div class="grid">
       <div class="grid-item">
-        <div class="grid-item-title">Chart</div>
-        <BarChart />
+        <div  class="grid-item-title">Chart</div>
+        <BarChart id="bar-chart" />
       </div>
       <div class="grid-item">
         <div class="grid-item-title">Soil Moisture</div>
@@ -155,7 +155,6 @@
       </div>
     </div>
   </div>
-  
 </template>
 
 <style>
