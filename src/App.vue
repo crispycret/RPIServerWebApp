@@ -1,7 +1,7 @@
 <script setup>
   import { ref, reactive,} from "vue";
   import BarChart from './assets/components/BarChart.vue'
-    // Import the functions you need from the SDKs you need
+  import LineChart from './assets/components/LineChart.vue'
   import { initializeApp } from "firebase/app";
   import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore/lite';
   // TODO: Add SDKs for Firebase products that you want to use
@@ -66,15 +66,14 @@
     where("DateTime",">", start), 
     where("DateTime","<", end));
 
-    const querySnapshot = await getDocs(q)
-    querySnapshot.forEach((doc)=>{
-      console.log(doc.id, " => ", doc.data());
-    })
+    // const querySnapshot = await getDocs(q)
+    // querySnapshot.forEach((doc)=>{
+    //   console.log(doc.id, " => ", doc.data());
+    // })
 
-    console.log(querySnapshot)
-    return querySnapshot;
+    // console.log(querySnapshot)
+    // return querySnapshot;
   }
-
 
   fetchData()
   function fetchData(){
@@ -129,7 +128,7 @@
 <script>
   export default {
     name: 'App',
-    components: { BarChart }
+    components: { BarChart, LineChart }
   }
 </script>
 
@@ -147,6 +146,10 @@
         <div class="grid-item">
           <div class="grid-item-title">Chart</div>
           <BarChart />
+        </div>
+        <div class="grid-item">
+          <div class="grid-item-title">Chart</div>
+          <LineChart />
         </div>
         <div class="grid-item">
           <div class="grid-item-title">Soil Moisture</div>

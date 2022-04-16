@@ -1,12 +1,11 @@
 <script>
-import { Bar } from 'vue-chartjs'
-import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
+import { Line } from 'vue-chartjs'
+import { Chart as ChartJS, Title, Tooltip, Legend, LineElement, LinearScale, PointElement, CategoryScale} from 'chart.js'
 
-ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
-
+ChartJS.register(Title, Tooltip, Legend, LineElement, LinearScale, PointElement, CategoryScale)
 export default {
-  name: 'BarChart',
-  components: { Bar },
+  name: 'LineChart',
+  components: { Line },
   props: {
     chartId: {
       type: String,
@@ -40,16 +39,17 @@ export default {
   data() {
     return {
       chartData: {
-        labels: [ 'January', 'February', 'March', 'April' ],
-        datasets: [{ 
-          label: "Humidity",
-          data: [.3, .33, .53, .72],
-          backgroundColor: 'rgba(255, 99, 132, 1)'
-        },{ 
-          label: "WaterContent",
-          data: [.13, .42, .45,.51],
-          backgroundColor: 'rgba(54, 162, 235, 1)'
-        }]
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [
+          {
+            label: 'Data One',
+            backgroundColor: '#E33344',
+            borderColor: '#E33344',
+            pointBackgroundColor: '#FFFFFF',
+            data: [.40, .39, .10, .40, .39, .80, .40],
+            tension: 0.3
+          }
+        ]
       },
       chartOptions: {
         scales: {
@@ -105,7 +105,7 @@ export default {
 </script>
 
 <template>
-  <Bar
+  <Line
     :chart-options="chartOptions"
     :chart-data="chartData"
     :chart-id="chartId"
