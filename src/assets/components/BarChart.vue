@@ -54,15 +54,15 @@ export default {
   data() {
     return {
       chartData: {
-        labels: [ 'January', 'February', 'March' ],
+        labels: [ 'January', 'February', 'March', 'April' ],
         datasets: [{ 
           label: "Humidity",
-          data: [.3, .33, .53],
+          data: [.3, .33, .53, .72],
           backgroundColor: 'rgba(255, 99, 132, 1)',
           
         },{ 
           label: "WaterContent",
-          data: [.13, .42, .45],
+          data: [.13, .42, .45,.51],
           backgroundColor: 'rgba(54, 162, 235, 1)'
         }]
       },
@@ -103,6 +103,12 @@ export default {
             display: true,
             labels: {
               color: '#FFF'
+            },
+            onHover: (event, chartElements) => {
+              event.native.target.style.cursor = 'pointer'
+            },
+            onLeave: (event, chartElements) => {
+              event.native.target.style.cursor = 'default'
             }
           }
         },
