@@ -44,7 +44,7 @@ body {
 
 #app {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   text-align: center;
   color: black;
@@ -70,10 +70,13 @@ body {
 
 .navbar{
   background-color: var(--color-raised);
-  padding: 0px 20px;
-  height: 100vh;
-  width: 20vw;
-  max-width: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;;
+  margin-bottom: 20px;
+  height: 10vh;
+  width: 100vw;
   color: var(--color-text);
 }
 
@@ -82,7 +85,7 @@ body {
   padding: 10px;
   margin: 25px 0px;
   transition: .2s ease;
-  
+  width: 15vw;
 }
 
 .nav-item:hover, #nav-item-selected, .input-button:hover{
@@ -100,7 +103,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80vw;
+  width: 95vw;
 }
 
 .grid{
@@ -109,6 +112,7 @@ body {
   display: grid;
   grid-template: auto / auto auto auto;
   gap: 5%;
+  margin-bottom: 50px;
 }
 
 .grid-item{
@@ -120,6 +124,7 @@ body {
   color: var(--color-text);
   border-radius: 20px;
   transition: .2s ease;
+  max-width: 30vw;
 }
 
 .grid-item-title{
@@ -176,7 +181,7 @@ body {
   }
 
   .nav-title{
-    font-size: 2vw;
+    font-size: 2.5vw;
   }
 
   .nav-item{
@@ -197,6 +202,6 @@ body {
 
 @media screen and (min-width: 1480px) {
   .nav-title{
-    font-size: 38px;
+    font-size: 2.5vw;
   }
 }

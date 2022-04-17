@@ -9,7 +9,7 @@ export default {
   props: {
     chartId: {
       type: String,
-      default: 'bar-chart'
+      default: 'line-chart'
     },
     datasetIdKey: {
       type: String,
@@ -46,7 +46,7 @@ export default {
             backgroundColor: '#E33344',
             borderColor: '#E33344',
             pointBackgroundColor: '#FFFFFF',
-            data: [.40, .39, .10, .40, .39, .80, .40],
+            data: [.40, .39, .10, .40, .39, .80, .40, .40, .39, .10, .40, .39, .80, .40],
             tension: 0.3
           }
         ]
@@ -85,16 +85,7 @@ export default {
         },
         plugins: {
           legend: {
-            display: true,
-            labels: {
-              color: '#FFF'
-            },
-            onHover: (event, chartElements) => {
-              event.native.target.style.cursor = 'pointer'
-            },
-            onLeave: (event, chartElements) => {
-              event.native.target.style.cursor = 'default'
-            }
+            display: false,
           }
         },
         responsive: true

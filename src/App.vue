@@ -66,6 +66,7 @@
     where("DateTime",">", start), 
     where("DateTime","<", end));
 
+    // query by dateTime
     // const querySnapshot = await getDocs(q)
     // querySnapshot.forEach((doc)=>{
     //   console.log(doc.id, " => ", doc.data());
@@ -136,53 +137,65 @@
     <div class="navbar">
       <h1 class="nav-title">PlantWaterer</h1>
       <div class="nav-item" id="nav-item-selected">Dashboard</div>
-      <div class="nav-item">Option 2</div>
-      <div class="nav-item">Option 3</div>
-      <div class="nav-item">Option 4</div>
     </div>
 
     <div class="grid-container">
       <div class="grid">
-        <div class="grid-item">
-          <div class="grid-item-title">Chart</div>
-          <BarChart />
-        </div>
-        <div class="grid-item">
-          <div class="grid-item-title">Chart</div>
-          <LineChart />
-        </div>
+
         <div class="grid-item">
           <div class="grid-item-title">Soil Moisture</div>
           <div class="grid-item-data">{{parseFloat(state.data.soilMoisture*100).toFixed(2)}}%</div>
         </div>
+
         <div class="grid-item">
           <div class="grid-item-title">Is empty</div>
           <div class="grid-item-data">{{state.data.isEmpty}}</div>
         </div>
+
         <div class="grid-item">
           <div class="grid-item-title">Light Level</div>
           <div class="grid-item-data">{{parseFloat(state.data.lightLevel*100).toFixed(2)}}%</div>
         </div>
+
         <div class="grid-item">
           <div class="grid-item-title">Pump Active</div>
           <div class="grid-item-data">{{ state.data.pumpActive }}</div>
         </div>
+
         <div class="grid-item">
           <div class="grid-item-title">Temperature</div>
           <div class="grid-item-data">{{state.data.temperature}} &#8457;</div>
         </div>
+
         <div class="grid-item">
           <div class="grid-item-title">Pump Duration</div>
           <div class="grid-item-data">{{state.data.pumpDuration}} seconds</div>
         </div>
+
         <div class="grid-item">
           <div class="grid-item-title">Pump Interval</div>
           <div class="grid-item-data">{{state.data.pumpInterval}} seconds</div>
         </div>
+
         <div class="grid-item">
           <div class="grid-item-title">Mode</div>
           <div class="grid-item-data">{{state.data.mode}} {{state.modeSetting}}</div>
         </div>
+
+        <div></div>
+
+        <div class="grid-item">
+          <div class="grid-item-title">Chart 1</div>
+          <BarChart />
+        </div>
+
+        <div class="grid-item">
+          <div class="grid-item-title">Chart 2</div>
+          <LineChart />
+        </div>
+
+        <div></div>
+
         <div class="grid-item">
           <form action='' class="input-container" v-on:submit.prevent="onSubmit" @submit=postData()>
             <div>
@@ -200,14 +213,17 @@
             <input type="submit" class="input-button">
           </form>
         </div>
+
         <div class="grid-item">
           <div class="grid-item-title">Received Data</div>
           <div class="grid-item-data">{{state.postData}}</div>
         </div>
+
         <div class="grid-item">
           <div class="grid-item-title">Refresh Data</div>
           <input type="submit" class="input-button" v-on:click=fetchData() value="Refresh">
         </div>
+
       </div>
     </div>
 </template>
