@@ -1,7 +1,5 @@
 <script setup>
   import { ref, reactive,} from "vue";
-  import BarChart from './assets/components/BarChart.vue'
-  import LineChart from './assets/components/LineChart.vue'
   import { initializeApp } from "firebase/app";
   import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore/lite';
   // TODO: Add SDKs for Firebase products that you want to use
@@ -33,7 +31,8 @@
   const input = reactive({
     pumpDuration: '',
     pumpInterval: '',
-    mode: ''
+    mode: '',
+    soilMoistureTarget: '',
   })
 
   var getRequestOptions = {
@@ -126,17 +125,12 @@
   }
 </script>
 
-<script>
-  export default {
-    name: 'App',
-    components: { BarChart, LineChart }
-  }
-</script>
+
 
 <template>
     <div class="navbar">
       <h1 class="nav-title">PlantWaterer</h1>
-      <div class="nav-item" id="nav-item-selected">Dashboard</div>
+      
     </div>
 
     <div class="grid-container">
@@ -182,19 +176,9 @@
           <div class="grid-item-data">{{state.data.mode}} {{state.modeSetting}}</div>
         </div>
 
-        <div></div>
+       
 
-        <div class="grid-item">
-          <div class="grid-item-title">Chart 1</div>
-          <BarChart />
-        </div>
-
-        <div class="grid-item">
-          <div class="grid-item-title">Chart 2</div>
-          <LineChart />
-        </div>
-
-        <div></div>
+     
 
         <div class="grid-item">
           <form action='' class="input-container" v-on:submit.prevent="onSubmit" @submit=postData()>
@@ -209,6 +193,10 @@
             <div>
               <p>RPI Mode</p>
               <input class="text-input" type="text" v-model="input.mode" placeholder="Mode" required>
+            </div>
+            <div>
+              <p>Target soilMoisture</p>
+              <input class="text-input" type="text" v-model="input.soilMoistureTarget" placeholder="Moisture target" required>
             </div>
             <input type="submit" class="input-button">
           </form>

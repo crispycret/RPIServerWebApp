@@ -34,23 +34,13 @@ export default {
     plugins: {
       type: Object,
       default: () => {}
+    },
+    newLabels: {
+      type: Array
     }
   },
   data() {
     return {
-      chartData: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [
-          {
-            label: 'Data One',
-            backgroundColor: '#E33344',
-            borderColor: '#E33344',
-            pointBackgroundColor: '#FFFFFF',
-            data: [.40, .39, .10, .40, .39, .80, .40, .40, .39, .10, .40, .39, .80, .40],
-            tension: 0.3
-          }
-        ]
-      },
       chartOptions: {
         scales: {
           y: {
@@ -94,6 +84,7 @@ export default {
   }
 }
 </script>
+
 
 <template>
   <Line
