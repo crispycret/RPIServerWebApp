@@ -129,7 +129,7 @@
 
 <template>
     <div class="navbar">
-      <h1 class="nav-title">PlantWaterer</h1>
+      <h1 class="nav-title">Wata'Matic</h1>
       
     </div>
 

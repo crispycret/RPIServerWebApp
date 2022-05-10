@@ -10,7 +10,7 @@
     "chart.js": "^3.7.1",
     "firebase": "^9.6.11",
     "url": "^0.11.0",
-    "vue": "^3.2.31",
+    "vue": "^3.2.33",
     "vue-chartjs": "^4.0.4"
   },
   "devDependencies": {
