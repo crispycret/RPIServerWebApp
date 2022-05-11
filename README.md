@@ -1,7 +1,8 @@
 # RPIServerWebApp
 
-Frontend hosted at
-https://watamatic.herokuapp.com/
+Frontend hosted at   https://watamatic.herokuapp.com/   (sensors and RaspberryPi may not be plugged in) 
+
+
 
 ## Recommended IDE Setup
 
