@@ -2,13 +2,13 @@
   "name": "rpiserverwebapp",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "CHOKIDAR_USEPOLLING=true vite",
     "start": "vite",
     "build": "vite build",
     "preview": "vite preview --port 5050"
   },
   "dependencies": {
-    "chart.js": "^3.7.1",
+    "chart.js": "^2.9.4",
     "firebase": "^9.6.11",
     "url": "^0.11.0",
     "vue": "^3.2.33",
@@ -16,8 +16,8 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.2.2",
-    "vite": "^2.8.4",
-    "@vue/cli-service": "5.0.4"
+    "@vue/cli-service": "5.0.4",
+    "vite": "^2.8.4"
   },
   "description": "This template should help get you started developing with Vue 3 in Vite.",
   "main": "vite.config.js",
