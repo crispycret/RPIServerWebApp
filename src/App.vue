@@ -1,25 +1,16 @@
 <script setup>
+
+
+
   import { ref, reactive,} from "vue";
-  import { initializeApp } from "firebase/app";
-  import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore/lite';
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+  // import { initializeApp } from "firebase/app";
+  // import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore/lite';
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyD_ZkIAmm-__MPMujSyZUXQBWa8LsH2QOI",
-    authDomain: "test12-452ae.firebaseapp.com",
-    projectId: "test12-452ae",
-    storageBucket: "test12-452ae.appspot.com",
-    messagingSenderId: "495868709078",
-    appId: "1:495868709078:web:8bce2b8efda444776be177",
-    measurementId: "G-TT894B2845"
-  };
+  import TempBarChart from './components/TempBarChart.vue'
+  
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
+
+
 
   const state = reactive({
     status: '',
@@ -49,31 +40,6 @@
   let start = new Date('2022-04-15T18:00:00')
   let end = new Date('2022-04-16')
 
-  getData()
-  async function getData() {
-    const colRef = collection(db, 'RaspberryData')
-
-    // query by light level
-    // const q = query(colRef, where("lightLevel",">", .8));
-    // const querySnapshot = await getDocs(q)
-    // querySnapshot.forEach((doc)=>{
-    //   console.log(doc.id, " => ", doc.data());
-    // })
-
-    //query by date
-    const q = query(colRef, 
-    where("DateTime",">", start), 
-    where("DateTime","<", end));
-
-    // query by dateTime
-    // const querySnapshot = await getDocs(q)
-    // querySnapshot.forEach((doc)=>{
-    //   console.log(doc.id, " => ", doc.data());
-    // })
-
-    // console.log(querySnapshot)
-    // return querySnapshot;
-  }
 
   fetchData()
   function fetchData(){
@@ -123,14 +89,21 @@
       console.log(state.data)
     }
   }
+
+
+
+ 
+
 </script>
 
 
 
+
 <template>
+
+
     <div class="navbar">
       <h1 class="nav-title">Wata'Matic</h1>
-      
     </div>
 
     <div class="grid-container">
@@ -200,7 +173,7 @@
             </div>
             <input type="submit" class="input-button">
           </form>
-        </div>
+        </div> 
 
         <div class="grid-item">
           <div class="grid-item-title">Received Data</div>
@@ -212,10 +185,29 @@
           <input type="submit" class="input-button" v-on:click=fetchData() value="Refresh">
         </div>
 
+        <div class="grid-item">
+          <div class="grid-item-title">Planet Chart</div>
+          <FinalChart />
+        </div>
       </div>
+    </div>
+
+    <TempBarChart />
+
+    <div class="data-container">
+      <!-- <FinalChart /> -->
     </div>
 </template>
 
+
+
+
+
+
+
 <style>
   @import "./assets/base.css";
+  
+
+
 </style>
