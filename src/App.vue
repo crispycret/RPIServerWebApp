@@ -38,7 +38,7 @@
   let end = new Date('2022-04-16')
 
 
-  fetchData()
+  // fetchData()
   function fetchData(){
     fetch("https://plantwaterer.ngrok.io/v1/data", getRequestOptions)
       .then((response) => { return response.json(); })
@@ -183,6 +183,10 @@
     </div>
 
     <TempBarChart />
+<<<<<<< HEAD
+=======
+    
+>>>>>>> flask
 </template>
 
 
