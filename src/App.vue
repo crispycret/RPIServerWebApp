@@ -9,9 +9,6 @@
   import TempBarChart from './components/TempBarChart.vue'
   
 
-
-
-
   const state = reactive({
     status: '',
     data: {},
@@ -100,8 +97,6 @@
 
 
 <template>
-
-
     <div class="navbar">
       <h1 class="nav-title">Wata'Matic</h1>
     </div>
@@ -184,19 +179,10 @@
           <div class="grid-item-title">Refresh Data</div>
           <input type="submit" class="input-button" v-on:click=fetchData() value="Refresh">
         </div>
-
-        <div class="grid-item">
-          <div class="grid-item-title">Planet Chart</div>
-          <FinalChart />
-        </div>
       </div>
     </div>
 
     <TempBarChart />
-
-    <div class="data-container">
-      <!-- <FinalChart /> -->
-    </div>
 </template>
 
 
