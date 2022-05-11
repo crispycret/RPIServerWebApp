@@ -181,19 +181,9 @@
         </div>
       </div>
     </div>
-
-    <TempBarChart />
-<<<<<<< HEAD
-=======
+      <TempBarChart />
     
->>>>>>> flask
 </template>
-
-
-
-
-
-
 
 <style>
   @import "./assets/base.css";
