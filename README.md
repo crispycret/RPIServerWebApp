@@ -1,6 +1,12 @@
 # RPIServerWebApp
 
-This template should help get you started developing with Vue 3 in Vite.
+Frontend hosted at  
+
+https://watamatic.herokuapp.com/   
+
+(sensors and RaspberryPi may not be plugged in) 
+
+
 
 ## Recommended IDE Setup
 
