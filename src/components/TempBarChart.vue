@@ -39,8 +39,6 @@ export default {
 
     const data = formatAsTempOverTime(collections)
 
-    console.log(data)
-
     const ctx = document.getElementById('temp-bar-chart');
 
     let c = new Chart(ctx, {  
@@ -55,14 +53,8 @@ export default {
           }
       }
     })
-
   }
-
 }
-
-
-
-
 </script>
 
 
