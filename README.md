@@ -1,9 +1,11 @@
 # RPIServerWebApp
 
-Frontend hosted at  
+## Frontend hosted at:  
 
-https://watamatic.herokuapp.com/   
+### [https://watamatic.herokuapp.com/](https://watamatic.herokuapp.com/)
 
+## Database hosted at:
+### https://watamatic-database.herokuapp.com/
 (sensors and RaspberryPi may not be plugged in) 
 
 
